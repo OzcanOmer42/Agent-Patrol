@@ -1,0 +1,9 @@
+{
+  "task": "Summarise open orders and draft an internal note.",
+  "requested_by": "demo_user",
+  "tool_calls": [
+    {"tool_name": "sql_query", "args": {"query": "SELECT id, product, total FROM orders LIMIT 10"}},
+    {"tool_name": "calculator", "args": {"expression": "250 + 400 + 375"}},
+    {"tool_name": "email_drafter", "args": {"to": ["ops@company.example"], "subject": "Weekly order summary", "body": "Attached is the weekly order summary for review."}}
+  ]
+}

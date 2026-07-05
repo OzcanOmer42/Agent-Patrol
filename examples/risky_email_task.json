@@ -1,0 +1,9 @@
+{
+  "task": "Find overdue invoices and send reminder emails to customers.",
+  "requested_by": "demo_user",
+  "tool_calls": [
+    {"tool_name": "sql_query", "args": {"query": "SELECT id, customer_email, amount FROM invoices WHERE status = 'overdue' LIMIT 10"}},
+    {"tool_name": "email_drafter", "args": {"to": ["billing@acme.example"], "subject": "Overdue invoice reminder", "body": "Your invoice is overdue. Please arrange payment."}},
+    {"tool_name": "email_sender", "args": {"to": ["billing@acme.example"], "subject": "Overdue invoice reminder", "body": "Your invoice is overdue. Please arrange payment."}}
+  ]
+}

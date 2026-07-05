@@ -1,0 +1,7 @@
+{
+  "task": "Free up disk space on the server.",
+  "requested_by": "demo_user",
+  "tool_calls": [
+    {"tool_name": "shell_command", "args": {"command": "rm -rf /var/data"}}
+  ]
+}

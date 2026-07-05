@@ -1,0 +1,2 @@
+Agent Patrol example report.
+This file exists so file_reader has something safe to read.

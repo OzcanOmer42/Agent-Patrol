@@ -1,0 +1,25 @@
+# Stricter configuration: tighter limits and a smaller command whitelist.
+workspace_root: "."
+
+sql:
+  allowed_tables: [invoices]
+  sensitive_fields: [password, token, api_key, ssn, secret, email, phone]
+  large_limit_threshold: 100
+
+shell:
+  allowed_commands: [echo, pwd]
+
+email:
+  bulk_recipient_threshold: 2
+
+file:
+  allowed_read_dirs: [examples]
+  allowed_write_dirs: [workspace]
+  blocked_names: [.env, id_rsa, credentials, secrets, config]
+
+pii:
+  block_on_high_side_effect: true
+
+rate_limit:
+  soft_limit: 2
+  hard_limit: 4

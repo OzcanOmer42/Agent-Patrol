@@ -1,0 +1,25 @@
+# Default AgentPatrol configuration.
+workspace_root: "."
+
+sql:
+  allowed_tables: [invoices, customers, orders]
+  sensitive_fields: [password, token, api_key, ssn, secret]
+  large_limit_threshold: 1000
+
+shell:
+  allowed_commands: [echo, pwd, ls, cat, date, whoami]
+
+email:
+  bulk_recipient_threshold: 5
+
+file:
+  allowed_read_dirs: [examples, data]
+  allowed_write_dirs: [workspace]
+  blocked_names: [.env, id_rsa, credentials, secrets]
+
+pii:
+  block_on_high_side_effect: true
+
+rate_limit:
+  soft_limit: 3
+  hard_limit: 6

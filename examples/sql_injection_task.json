@@ -1,0 +1,7 @@
+{
+  "task": "Clean up stale rows in the invoices table.",
+  "requested_by": "demo_user",
+  "tool_calls": [
+    {"tool_name": "sql_query", "args": {"query": "SELECT * FROM invoices WHERE id = 1; DROP TABLE invoices"}}
+  ]
+}
