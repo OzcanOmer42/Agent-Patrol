@@ -42,3 +42,10 @@ def test_run_blocks_destructive_shell():
 
 def test_trace_not_found():
     assert client.get("/traces/unknownrun").status_code == 404
+
+
+def test_dashboard_served():
+    response = client.get("/ui")
+    assert response.status_code == 200
+    assert "text/html" in response.headers["content-type"]
+    assert "Agent Patrol" in response.text

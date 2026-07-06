@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from time import perf_counter
 from typing import Any
 
@@ -87,7 +87,7 @@ class AgentPatrolRuntime:
         trace = RunTrace(
             run_id=run_id,
             user_task=user_task,
-            timestamp=datetime.now(timezone.utc).isoformat(),
+            timestamp=datetime.now(UTC).isoformat(),
             steps=trace_steps,
         )
         self.trace_logger.write(trace)

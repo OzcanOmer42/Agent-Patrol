@@ -8,10 +8,13 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
 from agentpatrol import __version__, build_evaluator, build_runtime
 from agentpatrol.policies import build_default_policies
+
+_STATIC_DIR = Path(__file__).parent / "static"
 
 _CONFIG_PATH = os.environ.get("AGENTPATROL_CONFIG") or None
 _DB_PATH = os.environ.get("AGENTPATROL_DB", "data/demo.db")
@@ -34,12 +37,19 @@ class RunRequest(BaseModel):
 @app.get("/")
 def status() -> dict[str, Any]:
     return {
-        "name": "AgentPatrol",
+        "name": "Agent Patrol",
         "version": __version__,
         "status": "ok",
+        "ui": "/ui",
         "tools_registered": len(_runtime.registry),
         "policies_active": len(_runtime.engine.policies),
     }
+
+
+@app.get("/ui", response_class=HTMLResponse)
+def dashboard() -> str:
+    """Serve the browser console."""
+    return (_STATIC_DIR / "dashboard.html").read_text(encoding="utf-8")
 
 
 @app.get("/tools")

@@ -166,9 +166,15 @@ allowed). Metrics are computed from real evaluations; see
 uvicorn agentpatrol.api:app --reload
 ```
 
+A browser console is served at **`http://127.0.0.1:8000/ui`**: pick a scenario or edit
+the task payload, run an inspection, and watch each proposed tool call get a colour-coded
+allow / warn / block / review verdict. It also lists the registered tools and active
+policies and can run the evaluation suite on demand.
+
 | Method | Path | Purpose |
 | --- | --- | --- |
 | GET | `/` | project status |
+| GET | `/ui` | browser console (dashboard) |
 | GET | `/tools` | list registered tools |
 | GET | `/policies` | list active policies |
 | POST | `/run` | run a task through the runtime |
