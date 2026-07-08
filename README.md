@@ -1,5 +1,5 @@
 # Agent Patrol
-
+![Agent Patrol console](docs/images/dashboard.png)
 **Validate, govern, and trace every agent action.**
 
 Agent Patrol is a lightweight Python runtime for safer tool-using AI agents. It
