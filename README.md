@@ -1,4 +1,7 @@
 # Agent Patrol
+![tests](https://github.com/OzcanOmer42/Agent-Patrol/actions/workflows/tests.yml/badge.svg)
+![python](https://img.shields.io/badge/python-3.11%2B-blue)
+![license](https://img.shields.io/badge/license-MIT-green)
 **[Live demo](https://agent-patrol.onrender.com/ui)** · [Docs](docs/architecture.md)
 ![Agent Patrol console](docs/images/dashboard.png)
 **Validate, govern, and trace every agent action.**
