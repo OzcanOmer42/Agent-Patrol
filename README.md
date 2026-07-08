@@ -1,4 +1,5 @@
 # Agent Patrol
+**[Live demo](https://agent-patrol.onrender.com/ui)** · [Docs](docs/architecture.md)
 ![Agent Patrol console](docs/images/dashboard.png)
 **Validate, govern, and trace every agent action.**
 
